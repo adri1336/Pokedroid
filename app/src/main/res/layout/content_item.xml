@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CD853F"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ItemActivity"
+    tools:showIn="@layout/activity_item">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:id="@+id/viewCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toTopOf="@id/ivPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/viewCard"
+        app:layout_constraintStart_toStartOf="@+id/viewCard"
+        app:layout_constraintTop_toTopOf="@+id/viewCard" />
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCard"
+        app:layout_constraintEnd_toStartOf="@+id/rotateLayout"
+        app:layout_constraintStart_toStartOf="@+id/viewCard"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:srcCompat="@drawable/ic_insert_photo" />
+
+    <com.github.rongi.rotate_layout.layout.RotateLayout
+        android:id="@+id/rotateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:angle="90"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCard"
+        app:layout_constraintEnd_toEndOf="@+id/viewCard"
+        app:layout_constraintStart_toEndOf="@id/ivPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="monospace" />
+    </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+    <com.github.rongi.rotate_layout.layout.RotateLayout
+        android:id="@+id/rotateLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:angle="90"
+        app:layout_constraintBottom_toTopOf="@id/ivArrow"
+        app:layout_constraintEnd_toStartOf="@id/viewHeight"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineCard"
+        app:layout_constraintVertical_weight="2">
+
+        <TextView
+            android:id="@+id/tvFactFile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|center_vertical"
+
+            android:text="FACT FILE"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            app:fontFamily="monospace" />
+    </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rotateLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rotateLayout2"
+        app:layout_constraintVertical_weight="1"
+        app:srcCompat="@drawable/ic_triangle" />
+
+    <View
+        android:id="@+id/viewHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/view_gradient"
+        app:layout_constraintBottom_toTopOf="@id/viewWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="7"
+        app:layout_constraintStart_toEndOf="@id/rotateLayout2"
+        app:layout_constraintTop_toBottomOf="@id/guidelineCard" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/tvHeight"
+        android:textColor="@android:color/holo_red_light"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewHeight"
+        app:layout_constraintEnd_toStartOf="@id/tvHeightValue"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="@+id/viewHeight"
+        app:layout_constraintTop_toTopOf="@+id/viewHeight" />
+
+    <TextView
+        android:id="@+id/tvHeightValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical|end"
+        android:text="0"
+        android:textColor="@android:color/white"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewHeight"
+        app:layout_constraintEnd_toEndOf="@+id/viewHeight"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvHeight"
+        app:layout_constraintTop_toTopOf="@+id/viewHeight" />
+
+    <View
+        android:id="@+id/viewWeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/view_gradient"
+        app:layout_constraintBottom_toTopOf="@id/viewSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/rotateLayout2"
+        app:layout_constraintTop_toBottomOf="@id/viewHeight" />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/tvWeight"
+        android:textColor="@android:color/holo_red_light"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewWeight"
+        app:layout_constraintEnd_toStartOf="@id/tvWeightValue"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="@+id/viewWeight"
+        app:layout_constraintTop_toTopOf="@+id/viewWeight" />
+
+    <TextView
+        android:id="@+id/tvWeightValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical|end"
+        android:text="0"
+        android:textColor="@android:color/white"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewWeight"
+        app:layout_constraintEnd_toEndOf="@+id/viewWeight"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvWeight"
+        app:layout_constraintTop_toTopOf="@+id/viewWeight" />
+
+    <View
+        android:id="@+id/viewSpeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/view_gradient"
+        app:layout_constraintBottom_toTopOf="@id/viewKillerRating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/rotateLayout2"
+        app:layout_constraintTop_toBottomOf="@id/viewWeight" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/tvSpeed"
+        android:textColor="@android:color/holo_red_light"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSpeed"
+        app:layout_constraintEnd_toStartOf="@id/tvSpeedValue"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="@+id/viewSpeed"
+        app:layout_constraintTop_toTopOf="@+id/viewSpeed" />
+
+    <TextView
+        android:id="@+id/tvSpeedValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical|end"
+        android:text="0"
+        android:textColor="@android:color/white"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSpeed"
+        app:layout_constraintEnd_toEndOf="@+id/viewSpeed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvSpeed"
+        app:layout_constraintTop_toTopOf="@+id/viewSpeed" />
+
+    <View
+        android:id="@+id/viewKillerRating"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/view_gradient"
+        app:layout_constraintBottom_toTopOf="@id/ivArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/rotateLayout2"
+        app:layout_constraintTop_toBottomOf="@id/viewSpeed" />
+
+    <TextView
+        android:id="@+id/tvKillerRating"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/tvKillerRating"
+        android:textColor="@android:color/holo_red_light"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewKillerRating"
+        app:layout_constraintEnd_toStartOf="@id/tvKillerRatingValue"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="@+id/viewKillerRating"
+        app:layout_constraintTop_toTopOf="@+id/viewKillerRating" />
+
+    <TextView
+        android:id="@+id/tvKillerRatingValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical|end"
+        android:text="0"
+        android:textColor="@android:color/white"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/viewKillerRating"
+        app:layout_constraintEnd_toEndOf="@+id/viewKillerRating"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvKillerRating"
+        app:layout_constraintTop_toTopOf="@+id/viewKillerRating" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Description"
+        android:textColor="@android:color/white"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivArrow"
+        app:layout_constraintTop_toTopOf="@+id/ivArrow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

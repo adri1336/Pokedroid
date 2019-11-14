@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pokedroid</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_add">Nuevo pokémon</string>
+    <string name="ivAddPhoto">Añadir imagen</string>
+    <string name="tilName">Nombre</string>
+    <string name="tilSpeciesName">Tipo</string>
+    <string name="tilDescription">Descripción</string>
+    <string name="tvHeight">Altura:</string>
+    <string name="tvWeight">Peso:</string>
+    <string name="tvSpeed">Velocidad:</string>
+    <string name="tvKillerRating">Asesino:</string>
+    <string name="action_deleteDB">Borrar BD</string>
+    <string name="btAdd">Añadir</string>
+    <string name="tilEmptyError">Este campo no puede estar vacío</string>
+    <string name="toastAdded">Pokémon añadido</string>
+    <string name="title_activity_item">Pokémon</string>
+</resources>
